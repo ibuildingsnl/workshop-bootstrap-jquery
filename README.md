@@ -7,7 +7,7 @@ If you don't want to install Node, Ruby, etc. on your workstation, you van use t
 installed, as well as [Ansible](http://docs.ansible.com/ansible/intro_installation.html), and then run:
 
 ```
-hexagonal-bdd$ vagrant up
+vagrant up
 ```
 
 ## setup (workstation)
