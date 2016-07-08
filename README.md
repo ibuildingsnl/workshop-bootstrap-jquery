@@ -54,6 +54,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
+                    sourcemap: 'inline',
                     loadPath: 'bower_components/bootstrap-sass/assets/stylesheets'
                 },
                 files: {
@@ -124,3 +125,61 @@ To find out how to use Bootstrap to get there, open http://getbootstram.com/ and
   - CSS > Grid system
 
 You will need no custom styling, except for a `margin-top` to get clear from the nav bar.
+
+## exercise 3: customize Bootstrap
+
+The style still looks a bit prefab, so let's customize it.
+
+We could write extra style rules to override the ones from Bootstrap, but Bootstrap let's us do something different, which is to redefine variables.
+
+First, we should create a separate stylesheet for our custom workshop rules. Let's call this `_workshop.scss` and create an import in `main.scss`:
+
+```scss
+@import "workshop";
+```
+
+Now, create a file called `_variables.scss` in `app/Resources/css/` and import that just before Bootstrap:
+
+```scss
+@import "variables";
+@import "bootstrap";
+@import "workshop";
+```
+
+If you look at `doc/designs/homepage.png`, you can see that the links are no longer blue, but dark red. But what variable should we change to change the colors of the links?
+
+To find out, start by inspecting a link in your development toolbar. We enabled source maps, which means that your browser can give you the SCSS code that is responsible for the link color.
+Now the code says `$link-color`, so let's override that:
+
+```scss
+$link-color: hsl(0, 100%, 30%);
+```
+
+The links are now red! But we can do better than that. If you look in `bower_components/boostrap-sass/assets/stylesheets/bootstrap/_variables.scss`, you can see a rule:
+
+```scss
+$link-color: $brand-primary !default;
+```
+
+This means that if we override `$brand-primary`, we not only fix links, but also buttons, pagination and many other elements, so let's to that:
+
+```scss
+$brand-primary: hsl(0, 100%, 30%);
+```
+
+Next, the headers. We want those in the same color as the links, and our dev tools tell us the variable we need to override is:
+
+```scss
+$headings-color: $brand-primary;
+```
+
+Finally, the menu. For this, we need to look a little closer to the variables file. There is an entire block dedicated to inverse navbars. A lot of them are fine the way they are, but three of them have to change:
+
+```scss
+$brand-secondary:           hsl(45, 100%, 50%);
+$navbar-inverse-color:      $brand-secondary;
+$navbar-inverse-bg:         $brand-primary;
+$navbar-inverse-link-color: $brand-secondary;
+```
+
+There is no such thing as `$brand-secondary` in Bootstrap, but it makes sense to name the color that way.
