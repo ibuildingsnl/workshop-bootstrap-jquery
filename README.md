@@ -109,3 +109,18 @@ grunt.initConfig({
 ```
 
 Now, if we run `grunt watch`, and we change something in `main.scss`, Grunt will recompile `main.css` and we only have to refresh our browser.
+
+## exercise 2: style the homepage
+
+The next step is to make sure the homepage is styled according to the design.
+
+You can find a mockup in `doc/designs/homepage.png`.
+
+To find out how to use Bootstrap to get there, open http://getbootstram.com/ and visit the following sections:
+
+  - Components > Navbar (Inverted navbar, Fixed to top!)
+  - Components > Jumbotron
+  - `<hr>` is not documented
+  - CSS > Grid system
+
+You will need no custom styling, except for a `margin-top` to get clear from the nav bar.
