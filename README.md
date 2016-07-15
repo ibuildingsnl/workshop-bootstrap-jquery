@@ -189,6 +189,8 @@ $navbar-inverse-link-color: $brand-secondary;
 
 There is no such thing as `$brand-secondary` in Bootstrap, but it makes sense to name the color that way.
 
+Note that our menu still has rounded borders, while the one in the design doesn't. Don't worry about this, we'll fix this later.
+
 ## exercise 4: icons and semantic tags
 
 Replace the text "Home" in the menu with an icon. Choose the one you think is most intuitive.
@@ -236,6 +238,16 @@ Let's add some semantic tags to the page. Look through the HTML and choose logic
   - `<strong>`
   - `<nav>`
   - `<section>`
+
+## exercise 5: CSS tweaks
+
+In real life, this is the point where the customer comes with a list of feedback points. Here it is:
+
+  - the menu should not have rounded corners
+  - neither should the jumbotron
+  - the space between the jumbotron and the horizontal rule should be equal to the space between the horizontal rule and the image below
+  - in the jumbotron, the "o" in "World" should be a globe icon (BONUS: fix for small screens as well)
+  - the menu should stick to the top if you scroll down (hint: `navbar-fixed-top`)
 
 ## exercise 6: dynamic content
 
