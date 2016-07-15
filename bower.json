@@ -1,0 +1,19 @@
+{
+  "name": "workshop-bootstrap-jquery",
+  "homepage": "https://github.com/ibuildingsnl/workshop-bootstrap-jquery",
+  "description": "Workshop Bootstrap/jQuery",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "jquery": "<3.0.0"
+  }
+}

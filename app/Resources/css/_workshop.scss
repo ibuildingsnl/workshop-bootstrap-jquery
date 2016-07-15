@@ -1,0 +1,32 @@
+.workshop-nav {
+  border-radius: 0;
+}
+
+.workshop-main {
+  position: relative;
+  z-index: 1000;
+
+  margin-top: $navbar-height + 1;
+  margin-bottom: $padding-large-vertical;
+
+  .jumbotron {
+    margin-top: $jumbotron-padding;
+    border-radius: 0;
+  }
+}
+
+.workshop-world-o {
+  @extend .glyphicon;
+  @extend .glyphicon-globe;
+
+  font-size: 36px;
+}
+
+.workshop-markdown-o {
+  @extend .glyphicon;
+  @extend .glyphicon-heart-empty;
+
+  line-height: 52px;
+  font-size: 44px;
+  vertical-align: bottom;
+}
