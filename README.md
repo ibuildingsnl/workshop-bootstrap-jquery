@@ -188,3 +188,51 @@ $navbar-inverse-link-color: $brand-secondary;
 ```
 
 There is no such thing as `$brand-secondary` in Bootstrap, but it makes sense to name the color that way.
+
+## exercise 4: icons and semantic tags
+
+Replace the text "Home" in the menu with an icon. Choose the one you think is most intuitive.
+
+Did it work? Probably not. The Sass compiler converts SCSS to CSS, but it ignores fonts. The easiest way to fix this is to copy over the fonts and rewrite the URLs in the CSS.
+
+First, install the following package:
+
+```
+npm install --save-dev grunt-contrib-copy
+```
+
+Then, add a copy task to the Gruntfile:
+
+```js
+    grunt.loadNpmTasks('grunt-contrib-copy');
+
+    grunt.initConfig({
+        sass: {
+            // ...
+        },
+        copy: {
+            fonts: {
+                expand: true,
+                flatten: true,
+                src: 'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
+                dest: 'web/fonts/bootstrap/'
+            }
+        },
+        watch: {
+            // ...
+        }
+    });
+    
+    grunt.registerTask('default', ['sass', 'copy']);
+```
+
+Now it works!
+
+Icons are a way to add a lot of meaning in a small amount of space. They are aimed at people viewing the page through a browser.
+Another way to add meaning to your page is through semantic tags, but they are aimed at screen readers and search engines.
+
+Let's add some semantic tags to the page. Look through the HTML and choose logic places to insert these tags:
+
+  - `<strong>`
+  - `<nav>`
+  - `<section>`
