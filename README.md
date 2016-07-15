@@ -237,7 +237,7 @@ Let's add some semantic tags to the page. Look through the HTML and choose logic
   - `<nav>`
   - `<section>`
 
-## exercise 5: dynamic content
+## exercise 6: dynamic content
 
 Our page is looking better and better, but the one thing it's missing is a carousel. Bootstrap has a number of standard components, including a carousel.
 Visit [the documentation](http://getbootstrap.com/javascript/#carousel) to read more.
