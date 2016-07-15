@@ -1,6 +1,6 @@
-# part 1
+# Part 1: Bootstrap
 
-## exercise 1: set up Bootstrap for Sass
+## Exercise 1: set up Bootstrap for Sass
 
 Start by opening the homepage. For the vagrant box, the URL is:
 
@@ -93,7 +93,7 @@ grunt.initConfig({
 
 Now, if we run `grunt watch`, and we change something in `main.scss`, Grunt will recompile `main.css` and we only have to refresh our browser.
 
-## exercise 2: style the homepage
+## Exercise 2: style the homepage
 
 The next step is to make sure the homepage is styled according to the design.
 
@@ -110,7 +110,7 @@ To find out how to use Bootstrap to get there, open http://getbootstrap.com/ and
 
 You will need no custom styling (just HTML), except for a `margin-top` to get clear from the nav bar.
 
-## exercise 3: customize Bootstrap
+## Exercise 3: customize Bootstrap
 
 The style still looks a bit prefab, so let's customize it.
 
@@ -170,7 +170,7 @@ There is no such thing as `$brand-secondary` in Bootstrap, but it makes sense to
 
 Note that our menu still has rounded borders, while the one in the design doesn't. Don't worry about this, we'll fix this later.
 
-## exercise 4: icons and semantic tags
+## Exercise 4: icons and semantic tags
 
 Replace the text "Home" in the menu with an icon. Choose the one you think is most intuitive.
 
@@ -218,7 +218,7 @@ Let's add some semantic tags to the page. Look through the HTML and choose logic
   - `<nav>`
   - `<section>`
 
-## exercise 5: CSS tweaks
+## Exercise 5: CSS tweaks
 
 In real life, this is the point where the customer comes with a list of feedback points. Here it is:
 
@@ -228,7 +228,7 @@ In real life, this is the point where the customer comes with a list of feedback
   - in the jumbotron, the "o" in "World" should be a globe icon (BONUS: fix for small screens as well)
   - the menu should stick to the top if you scroll down (hint: `navbar-fixed-top`)
 
-## exercise 6: dynamic content
+## Exercise 6: dynamic content
 
 Our page is looking better and better, but the one thing it's missing is a carousel. Bootstrap has a number of standard components, including a carousel.
 Visit [the documentation](http://getbootstrap.com/javascript/#carousel) to read more.

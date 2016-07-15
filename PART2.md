@@ -1,1 +1,1 @@
-# part 2
+# Part 2: jQuery

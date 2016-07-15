@@ -1,6 +1,6 @@
-# workshop-bootstrap-jquery
+# Workshop Bootstrap/jQuery
 
-## setup (vagrant)
+## Setup (vagrant)
 
 If you don't want to install Node, Ruby, etc. on your workstation, you can use the Vagrant box. Make sure you have
 [Vagrant](https://www.vagrantup.com/docs/installation/) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
@@ -10,7 +10,7 @@ installed, as well as [Ansible](http://docs.ansible.com/ansible/intro_installati
 vagrant up
 ```
 
-## setup (workstation)
+## Setup (workstation)
 
 If you are doing a lot of front-end work already, and you have a couple of these tools installed already, you can install the rest locally:
 
@@ -21,7 +21,7 @@ If you are doing a lot of front-end work already, and you have a couple of these
   - [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
   - [Sass](http://sass-lang.com/install)
 
-## exercises
+## Exercises
 
 This workshop has two parts.
 
