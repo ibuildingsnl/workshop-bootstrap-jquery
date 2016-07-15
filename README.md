@@ -245,7 +245,7 @@ Visit [the documentation](http://getbootstrap.com/javascript/#carousel) to read 
 To use the carousel, you should include `bootstrap.js` in `base.html.twig`. This script requires jQuery 2, which you can install using bower:
 
 ```
-bower install --save jquery#2
+bower install --save "jquery#<3.0.0"
 ```
 
 Before you can include these two scripts in `base.html.twig`, you should make sure they are copied by grunt. I'll let you work out for yourself how to do that.
