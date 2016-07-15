@@ -236,3 +236,24 @@ Let's add some semantic tags to the page. Look through the HTML and choose logic
   - `<strong>`
   - `<nav>`
   - `<section>`
+
+## exercise 5: dynamic content
+
+Our page is looking better and better, but the one thing it's missing is a carousel. Bootstrap has a number of standard components, including a carousel.
+Visit [the documentation](http://getbootstrap.com/javascript/#carousel) to read more.
+
+To use the carousel, you should include `bootstrap.js` in `base.html.twig`. This script requires jQuery 2, which you can install using bower:
+
+```
+bower install --save jquery#2
+```
+
+Before you can include these two scripts in `base.html.twig`, you should make sure they are copied by grunt. I'll let you work out for yourself how to do that.
+
+Finally, use the Bootstrap documentation to figure out how to add a carousel below the jumbotron, containing the following two pictures:
+
+  - https://placekitten.com/1140/500
+  - https://placekitten.com/g/1140/500
+
+Note that the carousel has a `data-ride` attribute that is used to bind JavaScript events to the elements. Bootstrap uses `data` attributes throughout the
+component library to bring elements to life.
