@@ -7,6 +7,7 @@
 
         <title>{% block title %}Workshop Bootstrap/jQuery{% endblock %}</title>
 
+        <link rel="stylesheet" href="{{ asset('css/parsley.css') }}">
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         {% block stylesheets %}{% endblock %}
 
@@ -17,7 +18,12 @@
             <div class="container">
                 <span class="navbar-brand">World of Markdown</span>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ path('homepage') }}"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li class="{% if app.request.attributes.get('_route') in ['homepage'] %}active{% endif %}">
+                        <a href="{{ path('homepage') }}"><span class="glyphicon glyphicon-home"></span></a>
+                    </li>
+                    <li class="{% if app.request.attributes.get('_route') in ['registration', 'registered'] %}active{% endif %}">
+                        <a href="{{ path('registration') }}">Register</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -26,6 +32,7 @@
         </section>
         <script src="{{ asset('js/jquery.js') }}"></script>
         <script src="{{ asset('js/bootstrap.js') }}"></script>
+        <script src="{{ asset('js/parsley.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

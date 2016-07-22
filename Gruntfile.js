@@ -25,14 +25,31 @@ module.exports = function(grunt) {
             scripts: {
                 expand: true,
                 flatten: true,
-                src: ['bower_components/bootstrap-sass/assets/javascripts/*.js', 'bower_components/jquery/dist/*.js'],
+                src: [
+                    'bower_components/bootstrap-sass/assets/javascripts/*.js',
+                    'bower_components/jquery/dist/*.js',
+                    'bower_components/parsleyjs/dist/parsley.js',
+                    'app/Resources/js/register.js'
+                ],
                 dest: 'web/js/'
+            },
+            styles: {
+                expand: true,
+                flatten: true,
+                src: [
+                    'bower_components/parsleyjs/src/parsley.css'
+                ],
+                dest: 'web/css/'
             }
         },
         watch: {
-            scripts: {
-                files: ['**/*.scss'],
+            sass: {
+                files: ['app/**/*.scss'],
                 tasks: ['sass']
+            },
+            files: {
+                files: ['app/**/*.js'],
+                tasks: ['copy']
             }
         }
     });
