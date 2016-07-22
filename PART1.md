@@ -224,9 +224,12 @@ In real life, this is the point where the customer comes with a list of feedback
 
   - the menu should not have rounded corners
   - neither should the jumbotron
-  - the space between the jumbotron and the horizontal rule should be equal to the space between the horizontal rule and the image below
-  - in the jumbotron, the "o" in "World" should be a globe icon (BONUS: fix for small screens as well)
   - the menu should stick to the top if you scroll down (hint: `navbar-fixed-top`)
+  - the space between the jumbotron and the horizontal rule should be equal to the space between the horizontal rule and the image below
+  - in the jumbotron, the "o" in "World" should be a globe icon
+  - in the jumbotron, the "o" in "Markdown" should be a heart-empty icon
+  - see `doc/designs/jumbotron.png` for the desired placement of the icons (note that the point of the heart is below the baseline)
+  - BONUS: fix the icons for small screens
 
 ## Exercise 6: dynamic content
 
