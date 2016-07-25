@@ -10,6 +10,21 @@ installed, as well as [Ansible](http://docs.ansible.com/ansible/intro_installati
 vagrant up
 ```
 
+Finish by running `composer install`, using the following parameters:
+
+```
+database_host: <enter for default>
+database_port: <enter for default>
+database_name: db
+database_user: user
+database_password: password
+mailer_transport: <enter for default>
+mailer_host: <enter for default>
+mailer_user: <enter for default>
+mailer_password: <enter for default>
+secret: <enter for default>
+```
+
 ## Setup (workstation)
 
 If you are doing a lot of front-end work already, and you have a couple of these tools installed already, you can install the rest locally:
@@ -20,6 +35,21 @@ If you are doing a lot of front-end work already, and you have a couple of these
   - [Bower](https://bower.io/#install-bower)
   - [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
   - [Sass](http://sass-lang.com/install)
+
+Finish by running `composer install`, using the following parameters:
+
+```
+database_host: <enter for default>
+database_port: <enter for default>
+database_name: db
+database_user: user
+database_password: password
+mailer_transport: <enter for default>
+mailer_host: <enter for default>
+mailer_user: <enter for default>
+mailer_password: <enter for default>
+secret: <enter for default>
+```
 
 ## Exercises
 
