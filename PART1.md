@@ -22,7 +22,7 @@ We'll be styling the homepage using Bootstrap for Sass, so we need a number of p
 ```
 bower install --save bootstrap-sass
 npm install --save-dev grunt
-npm install --save-dev grunt-contrib-sass
+npm install --save-dev grunt-sass
 npm install --save-dev grunt-contrib-watch
 ```
 
@@ -30,14 +30,13 @@ Now, create a file called `Gruntfile.js` and put in the following content:
 
 ```js
 module.exports = function(grunt) {
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
 
     grunt.initConfig({
         sass: {
             dist: {
                 options: {
-                    sourcemap: 'inline',
-                    loadPath: 'bower_components/bootstrap-sass/assets/stylesheets'
+                    sourcemap: 'inline'
                 },
                 files: {
                     'web/css/main.css': 'app/Resources/css/main.scss'
@@ -53,7 +52,7 @@ module.exports = function(grunt) {
 Then, create a file called `app/Resources/css/main.scss`, containing the following:
 
 ```scss
-@import "bootstrap";
+@import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 ```
 
 If you run `grunt`, then you should see two new files:
@@ -78,12 +77,14 @@ As you can see, the homepage now has some basic styling, but not nearly enough.
 Before we start adding more styling, let's set up Grunt to recompile our scss code automatically:
 
 ```js
+grunt.loadNpmTasks('grunt-contrib-watch');
+
 grunt.initConfig({
     sass: {
         // ...
     },
     watch: {
-        scripts: {
+        sass: {
             files: ['**/*.scss'],
             tasks: ['sass']
         }
@@ -126,7 +127,7 @@ Now, create a file called `_variables.scss` in `app/Resources/css/` and import t
 
 ```scss
 @import "variables";
-@import "bootstrap";
+@import "../../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "workshop";
 ```
 
