@@ -1,14 +1,14 @@
 module.exports = function(grunt) {
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks("grunt-eslint");
 
     grunt.initConfig({
         sass: {
             dist: {
                 options: {
-                    sourcemap: 'inline',
-                    loadPath: 'bower_components/bootstrap-sass/assets/stylesheets'
+                    sourcemap: 'inline'
                 },
                 files: {
                     'web/css/main.css': 'app/Resources/css/main.scss'
@@ -42,6 +42,9 @@ module.exports = function(grunt) {
                 dest: 'web/css/'
             }
         },
+        eslint: {
+            src: ['app/Resources/js/**/*.js']
+        },
         watch: {
             sass: {
                 files: ['app/**/*.scss'],
@@ -49,10 +52,11 @@ module.exports = function(grunt) {
             },
             files: {
                 files: ['app/**/*.js'],
-                tasks: ['copy']
+                tasks: ['copy', 'eslint']
             }
         }
     });
 
-    grunt.registerTask('default', ['sass', 'copy']);
+    grunt.registerTask('default', ['sass', 'copy', 'eslint']);
+    grunt.registerTask('test', ['eslint']);
 };
