@@ -32,7 +32,34 @@ The password should also be entered twice.
 
 Check out `DefaultController::checkEmailAvailableAction()`. This end-point returns information on whether an email address is available or not.
 
-TODO
+Now create a file named `register.js` in `app/Resources/js`. Start with the following content:
+
+```js
+(function ($, Parsley) {
+
+    console.log('test');
+
+}(window.jQuery, window.Parsley));
+```
+
+Start by getting this to work in your browser before we continue.
+
+The next step is to do a test-request to the server. Read the documentation on [`jQuery.ajax`](http://api.jquery.com/jquery.ajax/) and get it working.
+
+The last step is to turn this into a [Custom Parsley Validator](http://parsleyjs.org/doc/index.html#custom). Pay attention to the following passage:
+
+> Validating functions should return either true if the value is valid, or false otherwise. It can instead return a jQuery promise that will be resolved if the value is valid, or be rejected otherwise.
+
+There are a number of ways to create a jQuery promise, but I would recommend the following way, because it looks most
+like the new [ES6 Promise](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Promise):
+
+```js
+new $.Deferred(function (deferred) {
+    setTimeout(function () {
+        deferred.resolve('OK');
+    }, 3000);
+});
+```
 
 ## Exercise 5: install ESLint
 
@@ -52,6 +79,29 @@ Override the following rules:
 }
 ```
 
+We want to run ESLint through grunt. Let's add it to the default task, and add it to a new `test` task as well:
+
+```js
+grunt.loadNpmTasks("grunt-eslint");
+
+grunt.initConfig({
+    // ...
+    eslint: {
+        src: ['app/Resources/js/**/*.js']
+    },
+    watch: {
+        // ...
+        files: {
+            files: ['app/**/*.js'],
+            tasks: ['copy', 'eslint']
+        }
+    }
+});
+
+grunt.registerTask('default', ['sass', 'copy', 'eslint']);
+grunt.registerTask('test', ['eslint']);
+```
+
 If you run grunt now, you will probably get errors. Some of these are because the Airbnb style guide assumes you are working in ECMAScript 6.
 
 Since we're not, we can override the following rules as well:
@@ -61,7 +111,9 @@ Since we're not, we can override the following rules as well:
   "rules": {
     "strict": 0,
     "no-var": 0,
-    "func-names": 0
+    "func-names": 0,
+    "object-shorthand": 0,
+    "prefer-arrow-callback": 0
   }
 }
 ```
