@@ -5,7 +5,9 @@
         <div class="col-sm-6 col-sm-offset-2">
             <h1>Register</h1>
 
-            <form action="{{ path('register') }}" method="post">
+            <form action="{{ path('register') }}"
+                  method="post"
+                  data-parsley-validate>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
