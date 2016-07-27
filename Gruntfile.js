@@ -30,7 +30,7 @@ module.exports = function(grunt) {
                     'bower_components/bootstrap-sass/assets/javascripts/*.js',
                     'bower_components/jquery/dist/*.js',
                     'bower_components/parsleyjs/dist/parsley.js',
-                    'app/Resources/js/register.js'
+                    'app/Resources/js/**/*.js'
                 ],
                 dest: 'web/js/'
             },
