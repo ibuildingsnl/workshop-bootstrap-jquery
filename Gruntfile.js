@@ -8,6 +8,8 @@ module.exports = function(grunt) {
             dist: {
                 options: {
                     sourceMap: true,
+                    sourceMapEmbed: true,
+                    sourceMapContents: true
                 },
                 files: {
                     'web/css/main.css': 'app/Resources/css/main.scss'
