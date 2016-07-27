@@ -2,6 +2,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-eslint');
 
     grunt.initConfig({
         sass: {
@@ -49,7 +50,12 @@ module.exports = function(grunt) {
                     'bower_components/parsleyjs/src/parsley.css',
                 ],
                 dest: 'web/js/parsley/'
-            },
+            }
+        },
+        eslint: {
+            appFiles: {
+                src: ["app/Resources/js/**/*.js"]
+            }
         },
         watch: {
             sass: {
@@ -59,5 +65,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['sass', 'copy']);
+    grunt.registerTask('default', ['eslint', 'sass', 'copy']);
 };
