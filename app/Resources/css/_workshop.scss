@@ -1,0 +1,14 @@
+.container {
+    .jumbotron {
+        border-radius: 0;
+        margin-bottom: $padding-large-vertical;
+
+        .glyphicon {
+            font-size: 0.6em;
+        }
+
+        .glyphicon-heart-empty {
+            vertical-align: -5px;
+        }
+    }
+}
