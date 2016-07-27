@@ -14,8 +14,20 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password"
+                           minlength="8"
+                           pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$"
+                           data-parsley-pattern-message="Het wachtwoord moet uit minimaal 8 karakters bestaan en een kleine letter, een hoofdletter en een cijfer bevatten."
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordRepeat">Password (repeat)</label>
+                    <input type="password" class="form-control" id="passwordRepeat" placeholder="Password (repeat)"
+                           data-parsley-equalto="#repeat"
+                           data-parsley-error-message="De wachtwoorden komen niet overeen"
+                           required>
                 </div>
 
                 <button class="btn btn-default">Register</button>
