@@ -19,7 +19,8 @@
                     <input type="password" class="form-control" id="password" placeholder="Password"
                            minlength="8"
                            pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$"
-                           data-parsley-pattern-message="Het wachtwoord moet uit minimaal 8 karakters bestaan en een kleine letter, een hoofdletter en een cijfer bevatten."
+                           data-parsley-pattern-message="Het wachtwoord een kleine letter, een hoofdletter en een cijfer bevatten."
+                           data-parsley-minlength-priority="65"
                            required>
                 </div>
 
