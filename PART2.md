@@ -113,3 +113,20 @@ Since we're not, we can override the following rules as well:
   }
 }
 ```
+
+## Exercise 6: AJAXify registration form
+
+Take the register form and make sure it's submitted through AJAX instead of causing a page refresh.
+This means that the HTML that the server returns should be put into the DOM. (You should probably
+remove `{% extends 'base.html.twig' %}` from `registered.html.twig`.)
+
+Are you done yet?
+
+Chances are you have produced the first part of a big ball of jQuery spaghetti. This will not do.
+
+Structure your code by separating _component_ code from _page_ code.
+
+  - **Component** modules can be reused. Even though the chance of reusing the emailValidator
+    somewhere else are slim, it is decoupled from the page it is used on, which is a good thing.
+  - **Page** modules are only applicable to one specific page. Since they are not used, you
+    can be sure that if you change something, you only have to test one page.
