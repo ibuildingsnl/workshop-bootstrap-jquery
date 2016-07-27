@@ -22,6 +22,18 @@ module.exports = function(grunt) {
                 flatten: true,
                 src: 'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
                 dest: 'web/fonts/bootstrap/'
+            },
+            jquery: {
+                expand: true,
+                flatten: true,
+                src: 'bower_components/jquery/dist/*',
+                dest: 'web/js/jquery/'
+            },
+            bootstrapjs: {
+                expand: true,
+                flatten: true,
+                src: 'bower_components/bootstrap-sass/assets/javascripts/*',
+                dest: 'web/js/bootstrap/'
             }
         },
         watch: {

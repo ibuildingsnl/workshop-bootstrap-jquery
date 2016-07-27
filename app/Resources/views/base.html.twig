@@ -11,6 +11,10 @@
         <div class="container">
             {% block body %}{% endblock %}
         </div>
-        {% block javascripts %}{% endblock %}
+
+        {% block javascripts %}
+            <script src="{{ asset('js/jquery/jquery.js') }}"></script>
+            <script src="{{ asset('js/bootstrap/bootstrap.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
