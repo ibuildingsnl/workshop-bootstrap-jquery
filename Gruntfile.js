@@ -53,7 +53,7 @@ module.exports = function(grunt) {
             },
             files: {
                 files: ['app/**/*.js'],
-                tasks: ['copy', 'eslint']
+                tasks: ['copy']
             }
         }
     });
