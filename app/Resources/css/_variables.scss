@@ -1,3 +1,8 @@
 $brand-primary: hsl(0, 100%, 30%);
+$brand-secondary: hsl(45, 100%, 50%);
 
 $headings-color: $brand-primary;
+
+$navbar-inverse-color:      $brand-secondary;
+$navbar-inverse-bg:         $brand-primary;
+$navbar-inverse-link-color: $brand-secondary;
