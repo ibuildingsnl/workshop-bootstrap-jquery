@@ -1,0 +1,22 @@
+ul.parsley-errors-list {
+    margin-top: 10px;
+    color: $brand-danger;
+
+    li {
+        animation-duration: 3s;
+        animation-name: slidein;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+}
+
+@keyframes slidein {
+    from {
+        margin-left: 60%;
+    }
+
+    to {
+        margin-left: 0%;
+    }
+}
+

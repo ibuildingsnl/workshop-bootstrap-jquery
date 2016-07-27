@@ -34,7 +34,16 @@ module.exports = function(grunt) {
                 flatten: true,
                 src: 'bower_components/bootstrap-sass/assets/javascripts/*',
                 dest: 'web/js/bootstrap/'
-            }
+            },
+            parsleyjs: {
+                expand: true,
+                flatten: true,
+                src: [
+                    'bower_components/parsleyjs/dist/parsley.js',
+                    'bower_components/parsleyjs/src/parsley.css',
+                ],
+                dest: 'web/js/parsley/'
+            },
         },
         watch: {
             sass: {
