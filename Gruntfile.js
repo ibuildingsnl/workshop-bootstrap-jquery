@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    sourcemap: 'inline'
+                    sourceMap: true,
                 },
                 files: {
                     'web/css/main.css': 'app/Resources/css/main.scss'
