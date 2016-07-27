@@ -5,6 +5,7 @@
         <title>{% block title %}Workshop Bootstrap/jQuery{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+            <link rel="stylesheet" href="{{ asset('js/parsley/parsley.css') }}">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -17,6 +18,7 @@
         {% block javascripts %}
             <script src="{{ asset('js/jquery/jquery.js') }}"></script>
             <script src="{{ asset('js/bootstrap/bootstrap.js') }}"></script>
+            <script src="{{ asset('js/parsley/parsley.js') }}"></script>
         {% endblock %}
     </body>
 </html>
