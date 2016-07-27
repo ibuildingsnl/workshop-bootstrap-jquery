@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.initConfig({
         sass: {
@@ -13,6 +14,14 @@ module.exports = function(grunt) {
                 }
             }
         },
+        copy: {
+            fonts: {
+                expand: true,
+                flatten: true,
+                src: 'bower_components/bootstrap-sass/assets/fonts/bootstrap/*',
+                dest: 'web/fonts/bootstrap/'
+            }
+        },
         watch: {
             sass: {
                 files: ['**/*.scss'],
@@ -21,5 +30,5 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.registerTask('default', ['sass']);
+    grunt.registerTask('default', ['sass', 'copy']);
 };
