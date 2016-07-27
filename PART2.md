@@ -65,7 +65,7 @@ new $.Deferred(function (deferred) {
 
 Install [ESLint](https://www.npmjs.com/package/eslint)
 with the [Airbnb config preset](https://www.npmjs.com/package/eslint-config-airbnb)
-and the [Grunt plugin](https://www.npmjs.com/package/grunt-contrib-eslint).
+and the [Grunt plugin](https://www.npmjs.com/package/grunt-eslint).
 
 Override the following rules:
 
@@ -91,10 +91,6 @@ grunt.initConfig({
     },
     watch: {
         // ...
-        files: {
-            files: ['app/**/*.js'],
-            tasks: ['copy', 'eslint']
-        }
     }
 });
 
