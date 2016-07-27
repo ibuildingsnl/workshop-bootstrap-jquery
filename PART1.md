@@ -36,7 +36,8 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    sourcemap: 'inline'
+                    sourceMap: true,
+                    sourceMapContents: true
                 },
                 files: {
                     'web/css/main.css': 'app/Resources/css/main.scss'
@@ -104,12 +105,9 @@ To find out how to use Bootstrap to get there, open http://getbootstrap.com/ and
 
   - Components > Navbar
     - Inverted navbar
-    - Fixed to top
   - Components > Jumbotron
   - `<hr>` is not documented
   - CSS > Grid system
-
-You will need no custom styling (just HTML), except for a `margin-top` to get clear from the nav bar.
 
 ## Exercise 3: customize Bootstrap
 
@@ -225,12 +223,12 @@ In real life, this is the point where the customer comes with a list of feedback
 
   - the menu should not have rounded corners
   - neither should the jumbotron
+  - (keep the rounded corners for other elements)
   - the menu should stick to the top if you scroll down (hint: `navbar-fixed-top`)
-  - the space between the jumbotron and the horizontal rule should be equal to the space between the horizontal rule and the image below
+  - the space between the jumbotron and the horizontal rule should be adjusted, so that it is equal to the space between the horizontal rule and the image below
   - in the jumbotron, the "o" in "World" should be a globe icon
   - in the jumbotron, the "o" in "Markdown" should be a heart-empty icon
   - see `doc/designs/jumbotron.png` for the desired placement of the icons (note that the point of the heart is below the baseline)
-  - BONUS: fix the icons for small screens
 
 ## Exercise 6: dynamic content
 
