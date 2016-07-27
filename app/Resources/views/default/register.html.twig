@@ -10,7 +10,8 @@
                   data-parsley-validate>
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"
+                           data-parsley-existing-email="true" required>
                 </div>
 
                 <div class="form-group">
@@ -18,7 +19,8 @@
                     <input type="password" class="form-control" id="password" placeholder="Password"
                            minlength="8"
                            pattern="(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).*$"
-                           data-parsley-pattern-message="Het wachtwoord moet uit minimaal 8 karakters bestaan en een kleine letter, een hoofdletter en een cijfer bevatten."
+                           data-parsley-pattern-message="Het wachtwoord een kleine letter, een hoofdletter en een cijfer bevatten."
+                           data-parsley-minlength-priority="65"
                            required>
                 </div>
 
@@ -34,4 +36,8 @@
             </form>
         </div>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/app/register.js') }}"></script>
 {% endblock %}

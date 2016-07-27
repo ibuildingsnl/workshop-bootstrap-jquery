@@ -55,9 +55,9 @@ class DefaultController extends Controller
      */
     public function checkEmailAvailableAction(Request $request)
     {
-        $query = json_decode($request->getContent());
+        $email = $request->request->get('email');
 
-        if ($query->email === 'seggen@ibuildings.nl') {
+        if ($email === 'seggen@ibuildings.nl') {
             $result = ['available' => false];
         } else {
             $result = ['available' => true];

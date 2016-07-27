@@ -17,6 +17,12 @@ module.exports = function(grunt) {
             }
         },
         copy: {
+            app: {
+                expand: true,
+                flatten: true,
+                src: 'app/Resources/js/*',
+                dest: 'web/js/app/'
+            },
             fonts: {
                 expand: true,
                 flatten: true,
