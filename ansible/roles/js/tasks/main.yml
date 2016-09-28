@@ -19,14 +19,3 @@
 
 - name: Install bower
   npm: name=bower global=yes
-
-- name: Install ruby-sass
-  sudo: yes
-  apt: pkg=ruby-sass state=latest
-
-- name: Install ruby
-  sudo: yes
-  apt: pkg=ruby state=latest
-
-- name: Install sass
-  gem: name=sass version=3.4.21 user_install=no
