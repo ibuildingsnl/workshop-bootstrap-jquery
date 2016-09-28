@@ -235,11 +235,7 @@ In real life, this is the point where the customer comes with a list of feedback
 Our page is looking better and better, but the one thing it's missing is a carousel. Bootstrap has a number of standard components, including a carousel.
 Visit [the documentation](http://getbootstrap.com/javascript/#carousel) to read more.
 
-To use the carousel, you should include `bootstrap.js` in `base.html.twig`. This script requires jQuery 2, which you can install using bower:
-
-```
-bower install --save "jquery#<3.0.0"
-```
+To use the carousel, you should include `bootstrap.js` in `base.html.twig`.
 
 Before you can include these two scripts in `base.html.twig`, you should make sure they are copied by grunt. I'll let you work out for yourself how to do that.
 
