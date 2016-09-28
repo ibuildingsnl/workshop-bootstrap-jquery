@@ -3,30 +3,26 @@
   sudo: yes
   apt: update_cache=yes
 
-- name: Install nodejs
+- name: Remove legacy Node
   sudo: yes
-  apt: pkg=nodejs-legacy state=latest
+  apt: pkg=nodejs-legacy state=absent
 
-- name: Install npm
+- name: Remove legacy NPM
   sudo: yes
-  apt: pkg=npm state=latest
+  apt: pkg=npm state=absent
 
-- name: Update npm
-  npm: name=npm global=yes
+- name: Allow installation of Node 4
+  sudo: yes
+  shell: curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+  args:
+    creates: /etc/apt/sources.list.d/nodesource.list
+
+- name: Install Node 4
+  sudo: yes
+  apt: pkg=nodejs state=latest
 
 - name: Install grunt
   npm: name=grunt-cli global=yes
 
 - name: Install bower
   npm: name=bower global=yes
-
-- name: Install ruby-sass
-  sudo: yes
-  apt: pkg=ruby-sass state=latest
-
-- name: Install ruby
-  sudo: yes
-  apt: pkg=ruby state=latest
-
-- name: Install sass
-  gem: name=sass version=3.4.21 user_install=no
